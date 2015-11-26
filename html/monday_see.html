@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>财富派</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="理财师">
+    <meta name="keywords" content="理财师">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../css/monday_see.css">
+  </head>
+  <body>
+     <div class="mod mod_monday_see">
+        
+        <div class="top">
+          <div class="container">
+            <div class="top_bg">
+            <img src="../img_monday_see/img_1.png" alt="">
+           <ul class="countdown">
+              <li> <span class="days" >00</span>
+                
+              </li>
+              <li class="seperator" >.</li>
+              <li> <span class="hours">00</span>
+                
+              </li>
+              <li class="seperator">:</li>
+              <li> <span class="minutes">00</span>
+               
+              </li>
+              <li class="seperator">:</li>
+              <li> <span class="seconds">00</span>
+               
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sec sec_1">
+          <div class="container">
+            <ul class="time_node_sec">
+              <li class="time_node_1">
+                <a class="prod prod_1" href="javascript:void(0);">
+                  
+                </a>
+                <p>本产品总额<strong>200万</strong></p>
+              </li>
+              <li class="time_node_2">
+
+                <a class="prod prod_2" href="javascript:void(0);">
+                  
+                </a>
+                <p>本产品总额<strong>200万</strong></p>
+              </li>
+              <li class="time_node_3">
+                <a class="prod prod_3" href="javascript:void(0);">
+                  
+                </a>
+                <p>本产品总额<strong>100万</strong></p>
+              </li>
+            </ul>
+          </div>
+           
+        </div>
+        <div class="sec sec_2">
+          <div class="container">
+            <img src="../img_monday_see/img_5.png" alt="">
+            <a href="" class="prods_list"><img src="../img_monday_see/img_6.png" alt=""></a>
+          </div>
+           
+        </div>
+        <div class="sec sec_3">
+          <div class="container">
+             <div class="rules">
+            <ul>
+              <li class="no-pad"><h3 >活动说明</h3></li>
+              <li><p class="key">活动对象:</p><p class="value">所有财富派用户。</p></li>
+              <li><p class="key">活动内容:</p><p class='value'>
+                  10月19日和10月26日，10点、14点、17点会
+                   上线一款“‘周一见’专享产品”——固定收益，
+                   30天期限，预期年化收益7.8%。总额度500万元，
+                分3个时段开放。
+              </p></li>
+              <li><p class="key">投资方式:</p><p class="value">1000元起投，1元递增，单人最高限额5万元。</p></li>
+              <li class="no-pad">本次活动最终解释权归财富派所有.</li>
+            </ul>
+          </div>
+          </div>
+         
+        </div>
+        <div class="sec sec_4">
+          <div class="container">
+            <img src="../img_monday_see/img_8.png" alt="">
+          </div>
+        </div>
+     </div>
+  </body>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      $.fn.downCount = function (options, callback) {
+        var settings = $.extend({
+                date: null,
+                offset: null,
+                deviate_time:null
+            }, options);
+
+        // Throw error if date is not set
+        if (!settings.date) {
+            $.error('Date is not defined.');
+        }
+
+        // Throw error if date is set incorectly
+        if (!Date.parse(settings.date)) {
+            $.error('Incorrect date format, it should look like this, 12/24/2012 12:00:00.');
+        }
+
+        // Save container
+        var container = this;
+
+        /**
+         * Change client's local date to match offset timezone
+         * @return {Object} Fixed Date object.
+         */
+        var currentDate = function () {
+            // get client's current date
+            var date = new Date();
+
+            // turn date to utc
+            var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+
+            // set new Date object
+            var new_date = new Date(utc + settings.deviate_time+(3600000*settings.offset))
+
+            return new_date;
+        };
+
+        /**
+         * Main downCount function that calculates everything
+         */
+        function countdown () {
+            var target_date = new Date(settings.date), // set target date
+                current_date = currentDate(); // get fixed current date
+
+            // difference of dates
+            var difference = target_date - current_date;
+
+            // if difference is negative than it's pass the target date
+            if (difference < 0) {
+                // stop timer
+                clearInterval(interval);
+
+                if (callback && typeof callback === 'function') callback();
+
+                return;
+            }
+
+            // basic math variables
+            var _second = 1000,
+                _minute = _second * 60,
+                _hour = _minute * 60,
+                _day = _hour * 24;
+
+            // calculate dates
+            var days = Math.floor(difference / _day),
+                hours = Math.floor((difference % _day) / _hour),
+                minutes = Math.floor((difference % _hour) / _minute),
+                seconds = Math.floor((difference % _minute) / _second);
+
+                // fix dates so that it will show two digets
+                days = (String(days).length >= 2) ? days : '0' + days;
+                hours = (String(hours).length >= 2) ? hours : '0' + hours;
+                minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
+                seconds = (String(seconds).length >= 2) ? seconds : '0' + seconds;
+
+            // based on the date change the refrence wording
+          /*  var ref_days = (days === 1) ? 'day' : 'days',
+                ref_hours = (hours === 1) ? 'hour' : 'hours',
+                ref_minutes = (minutes === 1) ? 'minute' : 'minutes',
+                ref_seconds = (seconds === 1) ? 'second' : 'seconds';
+*/
+            // set to DOM
+            container.find('.days').text(days);
+            container.find('.hours').text(hours);
+            container.find('.minutes').text(minutes);
+            container.find('.seconds').text(seconds);
+
+           /* container.find('.days_ref').text(ref_days);
+            container.find('.hours_ref').text(ref_hours);
+            container.find('.minutes_ref').text(ref_minutes);
+            container.find('.seconds_ref').text(ref_seconds);*/
+        };
+        
+        // start
+        var interval = setInterval(countdown, 1000);
+    };
+    setTime();
+  function setTime(){
+    /*
+      * 读取 support，client值
+      * support = 0 表示 Android 低版本 不支持地址跳转  
+      * clienId （1：表示当前环境为ios   2：表示当前环境为Android  3：表示当前环境是 H5）
+      * 针对不同的环境  设置 不同的跳转地址就可以
+      */
+   // 获取uri地址
+      var url_value = window.location.href;
+      var support = getQueryString("support",url_value);
+      var clientId = getQueryString("clientId",url_value);
+
+  //数据格式
+  var summary={
+      h5:"https://h.yuangongbao.com/page/detail?pid=",
+      ios:"in://product/incomeRight/detail?rightsType=2&type=2&pid=",
+      data:[                                       
+        {"time":"2015/10/19 10:00:00","id":"104863"},
+        {"time":"2015/10/19 14:00:00","id":"104864"},
+        {"time":"2015/10/19 17:00:00","id":"104865"},
+        {"time":"2015/10/20 00:00:00","id":""}
+      ]
+    };
+
+  var oTime = window.serverTime;
+  var deviate_time ;
+      if(window.clientTime && window.serverTime ){
+        deviate_time =(window.serverTime-window.clientTime)*1000;
+      }else{
+        deviate_time = 0;
+      }
+  var oNewTime =new Date(deviate_time+Date.now());
+  var oNode_time_msecs_1 = new Date(summary.data[0].time);
+  var oNode_time_msecs_2 = new Date(summary.data[1].time);
+  var oNode_time_msecs_3 = new Date(summary.data[2].time);
+  var oNode_time_msecs_end = new Date(summary.data[3].time);
+
+   
+  //console.log(oNode_time_msecs_1+","+oNode_time_msecs_2+","+oNode_time_msecs_3);
+  if( (oNewTime - oNode_time_msecs_1)<0 ){
+    // 第一节点时间还没有开始 三个都不亮
+      
+      $('.countdown').downCount({
+          date: summary.data[0].time,
+          offset: +8,
+          deviate_time: 0
+        }, function () {
+           setTime();
+        });
+
+
+  }else if((oNewTime - oNode_time_msecs_1)>=0 && (oNewTime - oNode_time_msecs_2)<0){
+    // 第一节点时间开始  第二节点未开始
+      
+      $('.countdown').downCount({
+          date: summary.data[1].time,
+          offset: +8,
+          deviate_time: 0
+        }, function () {
+           setTime();
+        });
+
+        $(".time_node_1").addClass("active");
+      setLinkAddress($(".prod_1"),summary.data[0].id);
+
+  }else if((oNewTime - oNode_time_msecs_2)>=0 && (oNewTime - oNode_time_msecs_3)<0){
+    // 第二节点时间开始  第三节点未开始
+      
+      $('.countdown').downCount({
+          date: summary.data[2].time,
+          offset: +8,
+          deviate_time: 0
+        }, function () {
+         setTime();
+        });
+
+         $(".time_node_1").removeClass("active").addClass("end");
+         $(".time_node_2").addClass("active");
+      setLinkAddress($(".prod_2"),summary.data[1].id);
+
+  }else if((oNewTime - oNode_time_msecs_3)>=0 && (oNewTime - oNode_time_msecs_end)<0){
+    // 第三节点时间开始  还没到结束时间
+      $('.countdown').hide();
+      $(".time_node_1").removeClass("active").addClass("end");
+      $(".time_node_2").removeClass("active").addClass("end");
+      $(".time_node_3").addClass("active");
+
+        setLinkAddress($(".prod_3"),summary.data[2].id);
+  }else if((oNewTime - oNode_time_msecs_end)>=0 ){
+    // 超过结束时间 三个都不亮
+      $('.countdown').hide();
+
+  }
+  function setLinkAddress(target,prod_id){
+      var oIosurl = summary.ios+prod_id;
+      var oH5url = summary.h5+prod_id;
+      if(support !== "0"){
+             if(clientId == "1"){
+
+               target.attr("href",oIosurl);  
+               $(".prods_list").attr("href","in://root/productList");
+
+              }else if(clientId == "2"){
+                $(".prods_list").attr("href","in://root/productList");
+               $('.action_sec').hide();  
+
+              }else if(clientId == "3"){
+                $(".prods_list").attr("href","https://h.caifupai.com/page/product_list");
+               target.attr("href",oH5url);
+              }else{
+                $(".prods_list").attr("href","https://h.caifupai.com/page/product_list");
+               target.attr("href",oH5url);
+              }
+           }else{
+             target.click(function(){
+                $('.mask_update_app').show();
+             });
+          };
+  }
+  //获取地址栏参数
+    function getQueryString(names, urls) {
+      urls = urls || window.location.href;
+      if(urls && urls.indexOf("?") > -1){ urls = urls.substring(urls.indexOf("?") + 1);}
+      var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+      var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+      if(r!=null&&r[2]!=""){
+          var ms=r[2].match(/(\<)|(\>)|(%3C)|(%3E)/g);
+          if(ms&&ms.length>=4){
+              //如果检测到有2对及以上开始和结束尖括号
+              r[2]=r[2].replace(/(\<)|(%3C)/g,"");
+          }
+          return  unescape(r[2]);
+      }
+      return null;
+    }
+
+  function setProdlistLink () {
+    if(support !== "0"){
+             if(clientId == "1"){
+               $(".prods_list").attr("href","in://root/productList");
+
+              }else if(clientId == "2"){
+                $(".prods_list").attr("href","in://root/productList");
+               $('.action_sec').hide();  
+
+              }else if(clientId == "3"){
+                $(".prods_list").attr("href","https://h.caifupai.com/page/product_list");
+               
+              }else{
+                $(".prods_list").attr("href","https://h.caifupai.com/page/product_list");
+              }
+           }else{
+             target.click(function(){
+                $('.mask_update_app').show();
+             });
+          };
+  }
+  setProdlistLink();
+}
+  </script>
+</html>

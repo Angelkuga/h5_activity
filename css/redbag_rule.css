@@ -1,0 +1,108 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.mod {
+  width: 100%;
+  height: auto;
+}
+
+.mod_redbag_rule {
+  width: 100%;
+}
+.mod_redbag_rule .sec_banner, .mod_redbag_rule .sec_ct, .mod_redbag_rule .sec_rule {
+  width: 100%;
+}
+.mod_redbag_rule .sec_banner img, .mod_redbag_rule .sec_ct img, .mod_redbag_rule .sec_rule img {
+  width: 100%;
+  display: block;
+}
+.mod_redbag_rule .sec_ct {
+  background: url(../img_redbag/img_bg.png) center center;
+  background-size: 100% auto;
+  position: relative;
+  overflow: hidden;
+}
+.mod_redbag_rule .sec_ct .bg_star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../img_redbag/img_star.png) repeat-y top center;
+  background-size: 100% auto;
+  opacity: 0;
+}
+.mod_redbag_rule .sec_ct .bg_star.active {
+  -webkit-animation: twinkle_1 1.2s infinite forwards;
+}
+.mod_redbag_rule .sec_ct .bg_star.star_1 {
+  -webkit-transform: translate3d(0, 0, 0) rotate(-22deg);
+}
+.mod_redbag_rule .sec_ct .bg_star.star_1.active {
+  -webkit-animation: twinkle_2 1.2s 0.6s infinite forwards;
+}
+.mod_redbag_rule .sec_rule {
+  background-color: #e7d9c9;
+}
+
+@-webkit-keyframes twinkle_1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes twinkle_2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=redbag_rule.css.map */

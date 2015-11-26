@@ -1,0 +1,219 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.mod_monday_see {
+  width: 100%;
+  font-family: "Microsoft Yahei";
+}
+.mod_monday_see img {
+  width: 100%;
+}
+.mod_monday_see .container {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.mod_monday_see .top {
+  position: relative;
+  color: #fff;
+}
+.mod_monday_see .top ul.countdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  /* width: 66px;
+  height: 25px;
+  position: absolute;
+  right: 6.56%;
+  bottom: 5.6%;
+  font-family: "Arial";
+  background:url(../img_monday_see/img_countdown_bg.png) no-repeat center center; */
+  width: 85px;
+  height: 25px;
+  position: absolute;
+  right: 0.56%;
+  bottom: 5.6%;
+  font-family: "Arial";
+  background: url(../img_monday_see/img_countdown_bg_big.png) no-repeat center center;
+  background-size: contain;
+  padding: 0 4px;
+}
+.mod_monday_see .top ul.countdown li {
+  float: left;
+  font-size: 0;
+  font-weight: bolder;
+}
+.mod_monday_see .top ul.countdown li span {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 23px;
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: bolder;
+}
+.mod_monday_see .top ul.countdown li.seperator {
+  font-size: 0.75rem;
+  line-height: 23px;
+  vertical-align: middle;
+}
+@media screen and (max-width: 320px) {
+  .mod_monday_see .top ul.countdown {
+    right: 0.56%;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .mod_monday_see .top ul.countdown {
+    right: 1.56%;
+  }
+}
+.mod_monday_see .sec {
+  width: 100%;
+}
+.mod_monday_see .top {
+  background-color: #f05141;
+}
+.mod_monday_see .sec_1, .mod_monday_see .sec_2 {
+  background-color: #25282e;
+}
+.mod_monday_see .sec_1 {
+  box-sizing: border-box;
+  padding: 15px 20px 10px;
+}
+.mod_monday_see .sec_1 ul {
+  width: 285px;
+  margin: 0 auto;
+}
+.mod_monday_see .sec_1 ul:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.mod_monday_see .sec_1 li {
+  float: left;
+  margin-right: 20px;
+  width: 80px;
+}
+.mod_monday_see .sec_1 li:last-child {
+  margin-right: 0;
+}
+.mod_monday_see .sec_1 li .prod {
+  width: 80px;
+  height: 55px;
+  display: block;
+  cursor: default;
+}
+.mod_monday_see .sec_1 li .prod_1 {
+  background: url(../img_monday_see/img_prod_2.png) no-repeat left top;
+  background-size: 80px 185px;
+}
+.mod_monday_see .sec_1 li .prod_2 {
+  background: url(../img_monday_see/img_prod_3.png) no-repeat left top;
+  background-size: 80px 185px;
+}
+.mod_monday_see .sec_1 li .prod_3 {
+  background: url(../img_monday_see/img_prod_4.png) no-repeat left top;
+  background-size: 80px 185px;
+}
+.mod_monday_see .sec_1 li p {
+  font-size: 0.5rem;
+  line-height: 0.5rem;
+  margin-top: 5px;
+  color: #f05141;
+  text-align: center;
+}
+.mod_monday_see .sec_1 li p strong {
+  font-weight: bolder;
+}
+.mod_monday_see .sec_1 li.active .prod {
+  background-position: 0 -65px;
+  cursor: pointer;
+}
+.mod_monday_see .sec_1 li.end .prod {
+  background-position: 0 -130px;
+  cursor: default;
+}
+.mod_monday_see .sec_3 {
+  color: #565a63;
+  background-color: #202328;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.mod_monday_see .sec_3 ul li {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-bottom: 5px;
+  padding-left: 55px;
+  position: relative;
+}
+.mod_monday_see .sec_3 ul li:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+.mod_monday_see .sec_3 ul li h3 {
+  font-size: 0.875rem;
+  font-weight: bolder;
+}
+.mod_monday_see .sec_3 ul li .key {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.mod_monday_see .sec_3 ul li .value {
+  margin-left: 3px;
+}
+.mod_monday_see .sec_3 ul li.no-pad {
+  padding-left: 0;
+}
+.mod_monday_see .sec_4 {
+  font-size: 0;
+  background-color: #f05141;
+}
+
+/*# sourceMappingURL=monday_see.css.map */

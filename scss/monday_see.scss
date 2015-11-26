@@ -1,0 +1,188 @@
+@import "reset.scss";
+.mod_monday_see{
+	width: 100%;
+	font-family: "Microsoft Yahei";
+	img{
+		width: 100%;
+	}
+	.container{
+		max-width: 480px;
+		width: 100%;
+		margin:0 auto;
+		position: relative;
+	}
+	.top{
+		position: relative;
+		color: #fff;
+		ul.countdown {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: block;
+			text-align: center;
+			/* width: 66px;
+			height: 25px;
+			position: absolute;
+			right: 6.56%;
+			bottom: 5.6%;
+			font-family: "Arial";
+			background:url(../img_monday_see/img_countdown_bg.png) no-repeat center center; */
+			width: 85px;
+			height: 25px;
+			position: absolute;
+			right: 0.56%;
+			bottom: 5.6%;
+			font-family: "Arial";
+			background:url(../img_monday_see/img_countdown_bg_big.png) no-repeat center center;
+			background-size: contain;
+			padding:0 4px;
+			
+			li {
+				float: left;
+				font-size: 0;
+				font-weight: bolder;
+				span {
+					font-size: 0.75rem;
+					font-weight: 300;
+					line-height:  23px;
+					vertical-align: middle;
+					display: inline-block;
+					font-weight: bolder;
+				}
+				&.seperator {
+					font-size: 0.75rem;
+					line-height:  23px;
+					vertical-align: middle;
+				}
+			}
+		}
+		@media screen and (max-width: 320px) {
+			ul.countdown {
+
+				right: 0.56%;
+				
+			}
+		}
+		@media screen and (min-width:321px) and (max-width:480px){
+			ul.countdown {
+				right: 1.56%;
+			}
+			
+		}
+		
+	}
+	.sec{
+		width: 100%;
+	}
+	
+	.top{
+		background-color: #f05141;
+	}
+	.sec_1,.sec_2{
+		background-color: #25282e;
+	}
+	.sec_1{
+		box-sizing:border-box;
+		padding:15px 20px 10px;
+		ul{
+			width: 285px;
+			@include clearfix;
+			margin:0 auto;
+		}
+		li{
+			float: left;
+			margin-right:20px;
+			width: 80px;
+			&:last-child{
+				margin-right: 0;
+			} 
+			.prod{
+				width: 80px;
+				height: 55px;
+				display: block;
+				cursor: default;
+			}
+			.prod_1{
+				background:url(../img_monday_see/img_prod_2.png) no-repeat left top;
+				background-size: 80px 185px;
+			}
+			.prod_2{
+				background:url(../img_monday_see/img_prod_3.png) no-repeat left top;
+				background-size: 80px 185px;
+			}
+			.prod_3{
+				background:url(../img_monday_see/img_prod_4.png) no-repeat left top;
+				background-size: 80px 185px;
+			}
+			p{
+				font-size:0.5rem;
+				line-height: 0.5rem;
+				margin-top: 5px;
+				color: #f05141;
+				text-align: center;
+				strong{
+					font-weight: bolder;
+				}
+			}
+			
+			&.active{
+				.prod{
+					background-position: 0 -65px;
+					cursor: pointer;
+				}
+			}
+			&.end{
+				.prod{
+					background-position: 0 -130px;
+					cursor: default;
+				}
+			}
+
+		}
+		
+	}
+	
+	.sec_3{
+		color: #565a63;
+		background-color:#202328; 
+		box-sizing:border-box;
+		padding: 10px 20px;
+		ul{
+			
+			li{
+				&:after{
+					content:"";
+					width: 0;
+					height: 0;
+					display: block;
+					visibility: hidden;
+					clear: both;
+				}
+				h3{
+					font-size: 0.875rem;
+					font-weight: bolder;
+				}
+				font-size: 0.75rem;
+				line-height: 1rem;
+				margin-bottom: 5px;
+				padding-left:55px;
+				position: relative;
+				.key{
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+				.value{
+					margin-left: 3px;
+				}
+				&.no-pad{
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	.sec_4{
+		font-size: 0;
+		background-color: #f05141;
+	}
+}

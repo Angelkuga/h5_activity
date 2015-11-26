@@ -1,0 +1,128 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.mod_buyout_funds {
+  width: 100%;
+  width: 100%;
+  background: #0d0340 url(../img_buyout_funds/img_1.png) no-repeat top center;
+  background-size: contain;
+  overflow: hidden;
+  font-family: 'Microsoft YaHei';
+  font-size: 0;
+}
+.mod_buyout_funds .itm {
+  width: 100%;
+  opacity: 0;
+}
+.mod_buyout_funds .anim_sec {
+  width: 100%;
+  position: relative;
+  margin-top: 9.125rem;
+  z-index: 10;
+  -webkit-perspective: 500px;
+  -webkit-perspective-origin: center center;
+}
+.mod_buyout_funds .anim_sec .itm {
+  opacity: 0;
+}
+.mod_buyout_funds .anim_sec .itm_2 {
+  -webkit-transform: translate3d(100%, -30%, 0) scale(0.6);
+}
+.mod_buyout_funds .anim_sec .itm_3 {
+  margin-top: -1.125rem;
+  z-index: 11;
+  -webkit-transform: translate3d(-100%, 30%, 0) scale(0.6);
+}
+.mod_buyout_funds .anim_sec .itm_4 {
+  margin-top: -2.07rem;
+  z-index: 12;
+  -webkit-transform: translate3d(100%, -30%, 0) scale(0.6);
+}
+.mod_buyout_funds .anim_sec .itm_5 {
+  -webkit-transform: translate3d(0, 20%, 0);
+}
+.mod_buyout_funds .action_sec {
+  width: 100%;
+  height: 110px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.mod_buyout_funds .action_sec .goto_buy_btn {
+  display: block;
+  height: 60px;
+  margin-top: 20px;
+  background-color: #fc0044;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 3.75rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.mod_buyout_funds.ani_start .itm {
+  -webkit-transition: all  0.3s;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+.mod_buyout_funds.ani_start .itm_2 {
+  -webkit-transition-delay: 0.2s;
+}
+.mod_buyout_funds.ani_start .itm_3 {
+  -webkit-transition-delay: 0.4s;
+}
+.mod_buyout_funds.ani_start .itm_4 {
+  -webkit-transition-delay: 0.6s;
+}
+.mod_buyout_funds.ani_start .itm_5 {
+  -webkit-transition-delay: 1s;
+}
+
+@media screen and (max-width: 320px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  html, body {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=buyout_funds.css.map */

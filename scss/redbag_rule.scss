@@ -1,0 +1,56 @@
+@import "reset.scss";
+.mod{
+	width: 100%;
+	height: auto;
+
+}
+.mod_redbag_rule{
+	width: 100%;
+	.sec_banner,.sec_ct,.sec_rule{
+		width: 100%;
+		img{
+			width: 100%;
+			display: block;
+		}
+	}
+	.sec_ct{
+		background:url(../img_redbag/img_bg.png) center center;
+		background-size: 100% auto;
+		position: relative;
+		overflow: hidden;
+		.bg_star{
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0; 
+			background:url(../img_redbag/img_star.png) repeat-y top center;
+			background-size: 100% auto;
+			opacity: 0;
+			&.active{
+				-webkit-animation:twinkle_1 1.2s infinite forwards ;
+			}
+			&.star_1{
+				-webkit-transform:translate3d(0,0,0)  rotate(-22deg);
+				&.active{
+					-webkit-animation:twinkle_2 1.2s 0.6s infinite forwards ;
+				}
+			}
+		}
+	}
+	.sec_rule{
+		background-color: #e7d9c9;
+	}
+}
+@-webkit-keyframes twinkle_1
+{
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes twinkle_2
+{
+	0% {opacity: 0;}
+	50% {opacity: 6;}
+	100% {opacity: 0;}
+}

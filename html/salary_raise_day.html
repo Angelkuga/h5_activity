@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>员工宝</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="理财师">
+    <meta name="keywords" content="理财师">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../css/salary_raise_day.css">
+  </head>
+  <body>
+     <div class="mod mod_salary_raise_day">
+        <div class="banner">
+          <img src="../img_salary_raise_day/banner_bg.png" alt="">
+        </div>
+        <div class="pro_1">
+          <div class="pro_title">
+            <div class="name"><img src="../img_salary_raise_day/pro_1_name.png" alt=""></div>
+            <div class="invest"><img src="../img_salary_raise_day/icon_invest.png" alt=""></div>
+          </div>
+          <div class="pro_ct">
+            <img src="../img_salary_raise_day/pro_1_descri.png" alt="">
+            <img src="../img_salary_raise_day/pro_1_rule.png" alt="">
+          </div>  
+
+        </div>
+         <div class="pro_2">
+            <div class="line">
+                <img src="../img_salary_raise_day/icon_line.png" alt="">
+            </div>
+            <div class="pro_title">
+              <div class="name"><img src="../img_salary_raise_day/pro_2_name.png" alt=""></div>
+              <div class="invest"><img src="../img_salary_raise_day/icon_invest.png" alt=""></div>
+            </div>
+            <div class="pro_ct">
+              <img src="../img_salary_raise_day/pro_2_descri.png" alt="">
+              <img src="../img_salary_raise_day/pro_2_rule.png" alt="">
+            </div>  
+           </div>
+         <div class="buy_sec">
+            <div class="btn_wrap">
+               <a  class="btn_invest" href="" lizard-catch="off">立即投资</a>
+            </div>
+           
+         </div>
+     </div>
+  </body>
+  <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+  
+  <script>
+    $(function(){
+      // 临时用add  来仿造一个带有参数support的url地址
+      var add =   window.location.href+"?support=0";
+       // 临时仿造一个hash值为ios的测试值
+      window.location.hash="ios";
+      var url_hash = window.location.hash;
+      var support_value=getQueryString("support",add);
+      console.log(url_hash);
+      console.log(support_value);
+      if(support_value == "1"){
+         if(url_hash == "#ios"){
+             console.log("ios");
+            $('.btn_invest').attr("href","in://product/incomeRight/detail?rightsType=2&type=2&pid=104252");  
+          }else if(url_hash == "#android"){
+            console.log(android);
+            $('.btn_invest').attr("href","in://product/incomeRight/detail?rightsType=2&type=2&pid=104252");  
+
+          }else if(url_hash == "#h5"){
+             console.log("h5");
+            $('.btn_invest').attr("href","https://h.yuangongbao.com/page/detail?pid=104252");
+          }
+
+       
+        }else{
+            //不支持的逻辑处理 
+            console.log("不支持");
+        }
+        //获取地址栏参数
+    function getQueryString(names, urls) {
+      urls = urls || window.location.href;
+      if(urls && urls.indexOf("?") > -1){ urls = urls.substring(urls.indexOf("?") + 1);}
+      var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+      var r = urls ? urls.match(reg) : window.location.search.substr(1).match(reg);
+      if(r!=null&&r[2]!=""){
+          var ms=r[2].match(/(\<)|(\>)|(%3C)|(%3E)/g);
+          if(ms&&ms.length>=4){
+              //如果检测到有2对及以上开始和结束尖括号
+              r[2]=r[2].replace(/(\<)|(%3C)/g,"");
+          }
+          return  unescape(r[2]);
+      }
+      return null;
+    }
+  });
+    
+  </script>
+</html>
